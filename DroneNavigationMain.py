@@ -13,7 +13,7 @@ import json
 # Server endpoints and token
 server_url = 'https://dev-api.youdescribe.org/upload'
 server_url_chat = 'https://dev-api.youdescribe.org/chat'
-token = 'VVcVcuNLTwBAaxsb2FRYTYsTnfgLdxKmdDDxMQLvh7rac959eb96BCmmCrAY7Hc3'
+token = your_token_here
 
 # Camera parameters
 Camera_fx = 916.4798394056434
@@ -222,20 +222,6 @@ def capture_and_process_images():
     for speech_file in speech_files:
         play_audio(speech_file)
 
-# def send_question_and_get_response(question, image_path):
-#     data = {
-#         'token': token,
-#         'message': question,
-#         'image': (os.path.basename(image_path), open(image_path, 'rb')),
-#     }
-#     print(image_path)
-#     response = requests.post(server_url_chat, data=data)
-#     if response.status_code == 200:
-#         answer_output = json.loads(response.text)
-#         return answer_output.get('botReply', 'No answer received')
-#     else:
-#         print("Failed to send question to server:", response.status_code)
-#         return "No answer received"
 def send_question_and_get_response(question, image_path):
     # Open the image file in binary mode
     with open(image_path, 'rb') as image_file:
@@ -315,14 +301,6 @@ try:
                             text_to_speech(response, 'response.mp3')
                             play_audio('response.mp3')
         
-        # elif command.startswith("in front") or command.startswith("to your right") or command.startswith("behind") or command.startswith("to your left"):
-        #     # Extract the direction and question
-        #     direction, _, question = command.partition(' ')
-        #     image_path = direction_image_paths.get(direction)
-        #     if image_path:
-        #         response = send_question_and_get_response(question, image_path)
-        #         text_to_speech(response, 'response.mp3')
-
         elif command == "stop":
             print("Stopping the drone...")
             stop_voice_thread = True
