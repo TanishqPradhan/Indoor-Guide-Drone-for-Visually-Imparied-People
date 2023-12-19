@@ -20,6 +20,7 @@ git clone https://github.com/TanishqPradhan/Indoor-Guide-Drone-for-Visually-Impa
   - requests
   - speech_recognition
   - pygame
+  - google text-to-speech
 
 ## Usage
 - Ensure the drone is connected and the camera is properly configured.
