@@ -12,7 +12,7 @@ The Indoor Guide Drone project is an exploratory endeavor aimed at enhancing ind
 
 ## Installation
 1. Clone the repository:
-git clone [Repository URL]
+git clone https://github.com/TanishqPradhan/Indoor-Guide-Drone-for-Visually-Imparied-People
 
 2. Install required libraries.
   - OpenCV
